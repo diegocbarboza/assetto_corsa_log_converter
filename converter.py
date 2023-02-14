@@ -258,6 +258,9 @@ def create_players_elements(root, players, laps, race_element):
         prev_lap = -1
 
         for lap in laps:
+            if lap['time'] < 0:
+                continue
+
             if prev_lap != lap['lap']:
                 position = 1
                 prev_lap = lap['lap']
